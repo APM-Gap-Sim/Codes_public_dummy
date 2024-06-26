@@ -1,0 +1,22 @@
+#V30D045
+
+import math
+
+def calculate_Bf(N, A_p, R_bo, r_bo, R_bi, r_bi):
+    term1 = (R_bo**2 - r_bo**2) / math.log(R_bo / r_bo)
+    term2 = (R_bi**2 - r_bi**2) / math.log(R_bi / r_bi)
+    Bf = (math.pi / (2 * N * A_p)) * (term1 - term2)
+    return Bf
+
+# Example usage:
+A_p = 615.8
+N = 9  # Example value
+R_bo = 127.6/2  # Example value
+r_bo = 120/2  # Example value
+R_bi = 96/2 # Example value
+r_bi = 88.4/2  # Example value
+
+result = calculate_Bf(N, A_p, R_bo, r_bo, R_bi, r_bi)
+print("Balance factor =", result)
+
+#From Excel value : 0.967
